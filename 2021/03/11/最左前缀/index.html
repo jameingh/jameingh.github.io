@@ -106,29 +106,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></he
 <li><p>“走索引”的意思是，要查找的列在索引树上可以扫描到，并且是可以<strong>按照索引顺序</strong>查找到。</p>
 </li>
 </ul>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://jameingh.github.io">kim</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://jameingh.github.io/2021/03/11/%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80/">http://jameingh.github.io/2021/03/11/最左前缀/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://jameingh.github.io/tags/MySQL/">MySQL</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://jameingh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B0%83%E4%BC%98/">数据库调优</a></span></div><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"></script><script>function loadGitalk () {
-  if (!document.getElementById('gitalk-container')) {
-    return;
-  }
-
-  var gitalk = new Gitalk({
-    id: md5(window.location.pathname.slice(1)),
-    clientID: '61027f5c8963e414dea4',
-    clientSecret: 'e76a82c2a48f94a1cbbc8c384af163c2f3c9aee1',
-    repo: 'jameingh.github.io',
-    owner: 'jameingh',
-    admin: ['jameingh'],
-    distractionFreeMode: 'true',
-    language: 'zh-CN'
-  });
-  gitalk.render('gitalk-container');
-}
-
-if (false) {
-  loadGitalk();
-} else {
-  window.addEventListener('DOMContentLoaded', loadGitalk, false);
-}</script><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/03/16/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">插入排序</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/02/14/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"><span class="paginator-prev__text">动态代理</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88select-username-from-user-where-pwd-39-axsedf1sd-39-and-username-39-zhangsan-39-%E4%BC%9A%E8%B5%B0%E7%B4%A2%E5%BC%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://jameingh.github.io">kim</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://jameingh.github.io/2021/03/11/%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80/">http://jameingh.github.io/2021/03/11/最左前缀/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://jameingh.github.io/tags/MySQL/">MySQL</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://jameingh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B0%83%E4%BC%98/">数据库调优</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/03/16/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">插入排序</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/02/14/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"><span class="paginator-prev__text">动态代理</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div id="is-post"><div class="comments" id="comments"><div id="gitalk-container"></div></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88select-username-from-user-where-pwd-39-axsedf1sd-39-and-username-39-zhangsan-39-%E4%BC%9A%E8%B5%B0%E7%B4%A2%E5%BC%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
           为什么select username from user where pwd &#x3D;&#39;axsedf1sd&#39; and username&#x3D;&#39;zhangsan&#39;会走索引？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-where-Using-index%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
           Using where; Using index是什么意思？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#type%E6%98%AFindex%E8%A1%A8%E7%A4%BA%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">
           type是index表示什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-where-Using-index%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-number">2.2.</span> <span class="toc-text">
@@ -407,4 +385,26 @@ if (Array.isArray(assistSearchList)) {
       extSearch(name);
     }, false);
   });
-}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><!--include ./_third-party/comments/index.pug--><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
+}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"></script><script>function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: '61027f5c8963e414dea4',
+    clientSecret: 'e76a82c2a48f94a1cbbc8c384af163c2f3c9aee1',
+    repo: 'jameingh.github.io',
+    owner: 'jameingh',
+    admin: ['jameingh'],
+    distractionFreeMode: 'true',
+    language: 'zh-CN'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (false) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
