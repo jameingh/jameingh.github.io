@@ -5,16 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>我应该写什么 - Eucaly&#39;s blog</title>
+    <title>归并排序基础 - Eucaly&#39;s blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="记录和分享,折腾了一天，重新把hexo博客建好了
-不想再折腾了
-打算要写的内容，计划用博客来做什么
-
-记录学习过程，主要记录读书笔记、思维导图的总结、教程的总结（Java、分布式微服务、数据存储、算法、中间件源,"> 
+    <meta name="description" content="记录和分享,前要回顾前面我们学习了选择排序和插入排序，比较好理解，但是复杂度是O(n^2)
+不是说O(n^2)不好，在数据量不大的时候，其实是可以用的，因为实现简单。
+有没有更好的排序方案呢？
+下面看看时间复杂,"> 
     <meta name="author" content="kim"> 
     <link rel="alternative" href="atom.xml" title="Eucaly&#39;s blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -61,7 +60,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://jameingh.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">我应该写什么</h3>
+        <h3 class="subtitle">归并排序基础</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -91,25 +90,25 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/Diary"><b>「
-                    </b>DIARY<b> 」</b></a>
+                <a href="/categories/Algorithm"><b>「
+                    </b>ALGORITHM<b> 」</b></a>
                 
-                二月 08, 2021
+                三月 22, 2021
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/02/08/%E6%88%91%E5%BA%94%E8%AF%A5%E5%86%99%E4%BB%80%E4%B9%88/" title="我应该写什么" class="">我应该写什么</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/03/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%9F%BA%E7%A1%80/" title="归并排序基础" class="">归并排序基础</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    401
+                    7.2k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    1 mins.
+                    7 mins.
                 </span>
                 
                 
@@ -122,7 +121,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Diary/" rel="tag">Diary</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
             
         </div>
     </div>
@@ -143,27 +142,175 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p>折腾了一天，重新把hexo博客建好了</p>
-<p>不想再折腾了</p>
-<p>打算要写的内容，计划用博客来做什么</p>
-<ul>
-<li>记录学习过程，主要记录读书笔记、思维导图的总结、教程的总结（Java、分布式微服务、数据存储、算法、中间件源码架构设计）</li>
-<li>记录排查问题的过程</li>
-<li>记录生活中的想法（旅游、带娃、生活习惯养成、运动）</li>
-</ul>
-<p>不该写的内容</p>
-<ul>
-<li>不该当作备忘录</li>
-<li>不写没有体系，不写技术、生活无关的内容</li>
-</ul>
-<p>博客应该具备的能力</p>
-<ul>
-<li>字数统计</li>
-<li>访问统计</li>
-<li>评论系统</li>
-<li>个人简介、经历（让别人认识你）</li>
-</ul>
-<p>接下来，把上面博客的能力实现，然后从Java、算法开始</p>
+            <h2 id="前要回顾"><a href="#前要回顾" class="headerlink" title="前要回顾"></a>前要回顾</h2><p>前面我们学习了选择排序和插入排序，比较好理解，但是复杂度是O(n^2)</p>
+<p>不是说O(n^2)不好，在数据量不大的时候，其实是可以用的，因为实现简单。</p>
+<p>有没有更好的排序方案呢？</p>
+<p>下面看看时间复杂度是O(nlogn)的排序算法，归并排序。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>假如要对下面的数组排序</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322195817245.png" alt="image-20210322195817245"></p>
+<p>归并排序的思路是：把数组对半分，想办法把左边的数组排序，把右半部分排序，最后合并。</p>
+<p>在排序左半部分时，再把左半部分在对半分，并排序，合并。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322200027636.png" alt="image-20210322200027636"></p>
+<p>这样对半分，分到最后，每一部分只有一个元素，就不能再分了，然后顺序也排好了，只需要每部分依此归并。</p>
+<p>我们看下分成了几层，</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322200310337.png" alt="image-20210322200310337"></p>
+<p>总共有log(n)层。分析：每次对半分，分多少次？log以2为底，8的对数，是4。</p>
+<p>再以O(n)的算法归并，所以总体复杂度是O(nlogn)。</p>
+<p>使用递归思想。</p>
+<p>需要开辟临时空间，辅助归并。</p>
+<p>使用三个索引对归并过程跟踪。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203412929.png" alt="image-20210322203412929"></p>
+<p>蓝色的箭头，表示最终在归并的过程中我们需要跟踪的位置。</p>
+<p>两个红色的箭头指向两个排好序的数组当前我们要考虑的元素。</p>
+<p>我们考虑2，1谁应该先放到最终数组中</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203551791.png" alt="image-20210322203551791"></p>
+<p>1比2小，将1放入最终数组中，蓝色箭头移动到下一个位置</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203626303.png" alt="image-20210322203626303"></p>
+<p>与此同时，1原先所在数据的红色指针，考虑移动到下一个位置</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203707909.png" alt="image-20210322203707909"></p>
+<p>此时1已经在原数组中排好序了，</p>
+<p>在考虑2和4，2更小</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203816621.png" alt="image-20210322203816621"></p>
+<p>2放入原数组第二个位置，同时原数组的蓝色指针向后移一位，</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203849566.png" alt="image-20210322203849566"></p>
+<p>与此同时，2原来所在数组的红色指针，向后移到一个位置</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203918467.png" alt="image-20210322203918467"></p>
+<p>再考虑3和4，</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322203947587.png" alt="image-20210322203947587"></p>
+<p>3比4小，3放入原数组的蓝色指针指向的位置，原数组蓝色指针向后移动一位</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204007067.png" alt="image-20210322204007067"></p>
+<p>与此同时，3所在原数组的红色指针，向后移动一位。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204118074.png" alt="image-20210322204118074"></p>
+<p>此时比较6和4，6比4小，4放到原数组的蓝色指针指向的位置，原数组蓝色指针向后移动一位，同时4所在原数组的红色指针向后移动一位。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204234033.png" alt="image-20210322204234033"></p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204249810.png" alt="image-20210322204249810"></p>
+<p>指针就绪后，再考虑6和5比较，依此类推。</p>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>使用了三个索引（指针），必须定义清楚。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204429805.png" alt="image-20210322204429805"></p>
+<p>定义i和j，为当前正在考虑的元素，k用来指向i和j比较后，最终应该放到归并数组中的位置。</p>
+<p>注意，k表示的是下一个需要放置的位置，不是归并后的最后位置。</p>
+<p>维持三个变量在实现过程中，始终符合我们的定义，是正确实现的基础。</p>
+<p>为了防止越界，需要定义另外两个变量l(left)和r(right)，分别表示最左边和最右边的位置。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322204901158.png" alt="image-20210322204901158"></p>
+<p>还需要一个表示已经排好序的中间数组的最后一个位置m（middle）。</p>
+<p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210322205000663.png" alt="image-20210322205000663"></p>
+<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h2><p>main.cpp</p>
+<pre><code class="C++">#include &lt;iostream&gt;
+#include &quot;SortTestHelper.h&quot;
+#include &quot;InsertionSort.h&quot;
+
+using namespace std;
+
+
+// 将arr[l...mid]和arr[mid+1...r]两部分进行归并
+template&lt;typename  T&gt;
+void __merge(T arr[], int l, int mid, int r)&#123;
+
+    //* VS不支持动态长度数组, 即不能使用 T aux[r-l+1]的方式申请aux的空间
+    //* 使用VS的同学, 请使用new的方式申请aux空间
+    //* 使用new申请空间, 不要忘了在__merge函数的最后, delete掉申请的空间:)
+
+    //辅助空间对大小，由于是前闭后闭区间，所以是r-l+1
+    T aux[r-l+1];
+    //T *aux = new T[r-l+1];
+
+    //临时空间初始化
+    for( int i = l ; i &lt;= r; i ++ )
+        //aux是从零开始的，但是处理的arr空间是动态的l开始的，两个数组有一个l的距离偏移
+        aux[i-l] = arr[i];
+
+    // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
+    int i = l, j = mid+1;
+    //从l遍历到r，左边遍历到右边，决定k的位置
+    for( int k = l ; k &lt;= r; k ++ )&#123;
+
+        if( i &gt; mid )&#123;  // 如果左半部分元素已经全部处理完毕
+            arr[k] = aux[j-l]; j ++;
+        &#125;
+        else if( j &gt; r )&#123;  // 如果右半部分元素已经全部处理完毕
+            arr[k] = aux[i-l]; i ++;
+        &#125;
+        else if( aux[i-l] &lt; aux[j-l] ) &#123;  // 左半部分所指元素 &lt; 右半部分所指元素
+            arr[k] = aux[i-l]; i ++;
+        &#125;
+        else&#123;  // 左半部分所指元素 &gt;= 右半部分所指元素
+            arr[k] = aux[j-l]; j ++;
+        &#125;
+    &#125;
+
+    //delete[] aux;
+&#125;
+
+// 递归使用归并排序,对arr[l...r]的范围进行排序
+template&lt;typename T&gt;
+void __mergeSort(T arr[], int l, int r)&#123;
+
+    //处理递归到底的情况，l&gt;=r表示要处理的是至多一个元素的情况
+    if( l &gt;= r )
+        return;
+
+    //计算中点位置 思考：当l和r很大时，l+r可能会溢出，如何避免
+    int mid = (l+r)/2;
+    //对一半进行归并排序
+    __mergeSort(arr, l, mid);
+    //对另一半进行归并排序
+    __mergeSort(arr, mid+1, r);
+    //合并上面对两半数据
+    __merge(arr, l, mid, r);
+&#125;
+
+template&lt;typename T&gt;
+void mergeSort(T arr[], int n)&#123;
+
+    __mergeSort( arr , 0 , n-1 );
+&#125;
+
+
+// 比较InsertionSort和MergeSort两种排序算法的性能效率
+// 整体而言, MergeSort的性能最优, 对于近乎有序的数组的特殊情况, 见测试2的详细注释
+int main() &#123;
+
+    // Merge Sort是我们学习的第一个O(nlogn)复杂度的算法
+    // 可以在1秒之内轻松处理100万数量级的数据
+    // 注意：不要轻易尝试使用SelectionSort, InsertionSort或者BubbleSort处理100万级的数据
+    // 否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异：）
+    int n = 50000;
+
+    // 测试1 一般性测试
+    cout&lt;&lt;&quot;Test for random array, size = &quot;&lt;&lt;n&lt;&lt;&quot;, random range [0, &quot;&lt;&lt;n&lt;&lt;&quot;]&quot;&lt;&lt;endl;
+    int* arr1 = SortTestHelper::generateRandomArray(n,0,n);
+    int* arr2 = SortTestHelper::copyIntArray(arr1, n);
+
+    SortTestHelper::testSort(&quot;Insertion Sort&quot;, insertionSort, arr1, n);
+    SortTestHelper::testSort(&quot;Merge Sort&quot;,     mergeSort,     arr2, n);
+
+    delete[] arr1;
+    delete[] arr2;
+
+    cout&lt;&lt;endl;
+
+
+    // 测试2 测试近乎有序的数组
+    // 对于近乎有序的数组, 数组越有序, InsertionSort的时间性能越趋近于O(n)
+    // 所以可以尝试, 当swapTimes比较大时, MergeSort更快
+    // 但是当swapTimes小到一定程度, InsertionSort变得比MergeSort快
+    int swapTimes = 10;
+    assert( swapTimes &gt;= 0 );
+
+    cout&lt;&lt;&quot;Test for nearly ordered array, size = &quot;&lt;&lt;n&lt;&lt;&quot;, swap time = &quot;&lt;&lt;swapTimes&lt;&lt;endl;
+    arr1 = SortTestHelper::generateNearlyOrderedArray(n,swapTimes);
+    arr2 = SortTestHelper::copyIntArray(arr1, n);
+
+    SortTestHelper::testSort(&quot;Insertion Sort&quot;, insertionSort, arr1, n);
+    SortTestHelper::testSort(&quot;Merge Sort&quot;,     mergeSort,     arr2, n);
+
+    delete[] arr1;
+    delete[] arr2;
+
+    return 0;
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/jinxin.70/alpha1/commit/a282842861ad89dea328e02449972c09ab5fd7fd">完整代码地址</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -183,10 +330,9 @@
             <div class="post-nav">
                 <hr>
                 
-                    <div class="post-nav-item">上一篇:<a href="/2021/02/09/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" rel="prev" 
-                        title="类加载机制">类加载机制
-                      </a></div>
                 
+                    <div class="post-nav-item">下一篇:<a href="/2021/03/16/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="next" 
+                        title="插入排序">插入排序</a></div>
                                 
             </div>   
                         
@@ -229,6 +375,13 @@
             </div>
             
             
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A6%81%E5%9B%9E%E9%A1%BE"><span class="toc-number">1.</span> <span class="toc-text">前要回顾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">难点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">C++实现</span></a></li></ol>
+                </div>
+            </div>
             
             
         </div>
