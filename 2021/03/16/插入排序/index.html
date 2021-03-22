@@ -10,15 +10,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="记录和分享,插入排序将如要对下面的数组排序
-
-第一个元素8，不动，对于8，他是排好序的，继续下一个元素
-
-我们想要把第二个元素6，插入到前面元素的合适位置，
-
-6比8小，交换位置
-
-下面开始，将2插入到前面合适,"> 
+    <meta name="description" content="记录和分享,前要回顾前面我们提供了一个对数据排序的方案，是选择排序。
+排序的过程，回顾一下。
+如果要对数组进行从小到大排序，选择排序怎么做呢？
+我们对数组的每个位置进行遍历，举个例子：
+比如一开始，第一个位置，,"> 
     <meta name="author" content="kim"> 
     <link rel="alternative" href="atom.xml" title="Eucaly&#39;s blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -107,13 +103,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    5.5k
+                    6.2k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    5 mins.
+                    6 mins.
                 </span>
                 
                 
@@ -147,7 +143,20 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>将如要对下面的数组排序</p>
+            <h2 id="前要回顾"><a href="#前要回顾" class="headerlink" title="前要回顾"></a>前要回顾</h2><p>前面我们提供了一个对数据排序的方案，是选择排序。</p>
+<p>排序的过程，回顾一下。</p>
+<p>如果要对数组进行从小到大排序，选择排序怎么做呢？</p>
+<p>我们对数组的每个位置进行遍历，举个例子：</p>
+<p>比如一开始，第一个位置，我们要放置最小的元素到这个位置，于是从所有元素中选择一个最小的。然后和第一个位置的元素交换，这样，就确定了最小的数。</p>
+<p>下面确定第二小的数，就是从第一个位置后面所有的元素中找到最小的，然后交换位置。</p>
+<p>依此类推，完成从小到大的排序。</p>
+<p>这就是选择排序的一般过程。</p>
+<p>总体来看，需要两层循环去完成上述过程，第一层循环，用于确定每个位置上的应该存放的合适的数。</p>
+<p>第二层是在剩余未排序的元素中找到这个合适的数的位置。</p>
+<p>时间复杂度是O(n^2)</p>
+<p>除了选择排序，有没有其他的方案呢？</p>
+<p>有，再来看看插入排序，是另一种思路。</p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>假如要对下面的数组排序</p>
 <p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210310184137684.png" alt="image-20210310184137684"></p>
 <p>第一个元素8，不动，对于8，他是排好序的，继续下一个元素</p>
 <p><img src="https://gitee.com/jinxin.70/oss/raw/master/uPic2/image-20210310184203449.png" alt="image-20210310184203449"></p>
@@ -247,6 +256,10 @@ void insertionSort(T arr[], int n)&#123;
 <li>都是O(n^2)复杂度</li>
 <li>插入排序在数组近乎有序的时候，效率非常高</li>
 </ul>
+<p>为什么插入排序在数据近乎有序时，效率比选择排序高。</p>
+<p>因为选择排序，是从剩余位置找到最小的数，找最小数这个过程，要比较剩余的所有元素才能找到最小值</p>
+<p>插入排序，是把当前位置的元素和前面排好序的元素比较，找到一个合适的位置，由于前面是排好序的，</p>
+<p>所以在元素基本有序的情况下，插入比较不需要和前面所有元素比较，就能确定合适的位置。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -315,7 +328,7 @@ void insertionSort(T arr[], int n)&#123;
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">插入排序代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%94%B9%E8%BF%9B"><span class="toc-number">3.</span> <span class="toc-text">插入排序改进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%92%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%AF%94%E8%BE%83"><span class="toc-number">4.</span> <span class="toc-text">选择排序和插入排序比较</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A6%81%E5%9B%9E%E9%A1%BE"><span class="toc-number">1.</span> <span class="toc-text">前要回顾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">插入排序代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%94%B9%E8%BF%9B"><span class="toc-number">4.</span> <span class="toc-text">插入排序改进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%92%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text">选择排序和插入排序比较</span></a></li></ol>
                 </div>
             </div>
             
