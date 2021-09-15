@@ -1251,8 +1251,7 @@ $(function () {
           admin: [comment.data('a')],
           id: md5(window.location.pathname),
           distractionFreeMode: comment.data('d'),
-          proxy: comment.data('p'),
-          labels: ['Gitalk']
+          labels: ['Gitalk'],
         });
         $('.comment').removeClass('link');
         gitalk.render('gitalk-container');
